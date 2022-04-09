@@ -1,0 +1,12 @@
+{
+    "Main": {
+      "header_logo": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Header Logo"
+        }
+      }
+    }
+  }

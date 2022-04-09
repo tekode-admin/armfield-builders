@@ -1,0 +1,33 @@
+{
+    "Main": {
+      "attribution": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label": "Attribution"
+        }
+      },
+      "socials": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "social_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Social Image"
+              }
+            },
+            "social_link": {
+              "type": "Link",
+              "config": {
+                "label": "Social Link"
+              }
+            }
+          },
+          "label": "Socials"
+        }
+      }
+    }
+  }
