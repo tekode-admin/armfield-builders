@@ -1,0 +1,69 @@
+.ContactWrap {
+    margin-top: 4em;
+
+    .SectionBreak {
+        width: 50%;
+        border-bottom: 2px dashed $dark-blue;
+        margin-bottom: 1.5em;
+    }
+
+    .ContactContentWrap {
+        padding: 0 1em;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .ContactFormWrap {
+            display: flex;
+            flex-flow: column;
+            margin: 0 auto;
+            width: 80%;
+            padding-top: 2em;
+
+            @media #{$mq-medium} {
+                font-size: 0.8em;
+            }
+
+            .ServiceWrap {
+                display: flex;
+                flex-flow: column;
+                margin-top: 1em;
+
+                .ServiceLabel {
+                    font-size: 2em;
+                    padding: 0.25em 0 0.75em 0;
+
+                    @media #{$mq-medium} {
+                        padding-left: 0.5em;
+                    }
+                }
+
+                .ServiceOptionsWrap {
+                    display: flex;
+                    justify-content: space-between;
+
+                    label {
+                        font-size: 1.5em;
+                        font-weight: 800;
+
+                        @media #{$mq-large} {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+            }
+
+            .ContactSubmitButton {
+                background: transparent;
+                border: none;
+                border-bottom: 2px dashed $dark-blue;
+                width: 5em;
+                font-size: 2.3em;
+                margin: 1em auto 2em;
+
+                &.Disabled {
+                    border-bottom: 2px dashed #1010104D;
+                }
+            }
+        }
+    }
+}

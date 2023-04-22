@@ -7,7 +7,7 @@ const initialState = {
 }
 
 if (typeof window !== 'undefined') {
-   initialState.isMobile = window.innerWidth < 1024;
+   initialState.isMobile = window.innerWidth < 768;
 }
 
 const store = createStore(Reducer, initialState);

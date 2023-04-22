@@ -1,0 +1,60 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "contact_title": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em",
+        "label": "Contact Title"
+      }
+    },
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Name"
+      }
+    },
+    "email": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Email"
+      }
+    },
+    "phone": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Phone"
+      }
+    },
+    "services": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "service_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Service Title"
+            }
+          }
+        },
+        "label": "Services"
+      }
+    },
+    "message": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Message"
+      }
+    }
+  }
+}

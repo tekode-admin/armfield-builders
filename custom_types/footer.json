@@ -1,33 +1,47 @@
 {
-    "Main": {
-      "attribution": {
-        "type": "StructuredText",
-        "config": {
-          "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-          "label": "Attribution"
-        }
-      },
-      "socials": {
-        "type": "Group",
-        "config": {
-          "fields": {
-            "social_image": {
-              "type": "Image",
-              "config": {
-                "constraint": {},
-                "thumbnails": [],
-                "label": "Social Image"
-              }
-            },
-            "social_link": {
-              "type": "Link",
-              "config": {
-                "label": "Social Link"
-              }
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "copyright": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Copyright"
+      }
+    },
+    "attribution": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+        "allowTargetBlank": true,
+        "label": "Attribution"
+      }
+    },
+    "socials": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "social_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Social Title"
             }
           },
-          "label": "Socials"
-        }
+          "social_link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Social Link"
+            }
+          }
+        },
+        "label": "Socials"
       }
     }
   }
+}

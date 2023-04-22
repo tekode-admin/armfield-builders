@@ -1,0 +1,19 @@
+{
+  "Main": {
+    "home_sections": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "home_section": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "label": "Home Section"
+            }
+          }
+        },
+        "label": "Home Sections"
+      }
+    }
+  }
+}

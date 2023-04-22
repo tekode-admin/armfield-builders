@@ -1,0 +1,81 @@
+.ProjectSection {
+    
+    .ProjectHero {
+        height: 10em;
+
+        .ProjectHeroImage {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @media #{$mq-medium} {
+            height: 18em;
+        }
+
+        @media #{$mq-large} {
+            height: 15em;
+        }
+
+        @media #{$mq-xlarge} {
+            height: 23em;
+        }
+    }
+
+    .ProjectContentWrap {
+        padding: 1em;
+
+        .ProjectSpecsWrap {
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 1em;
+            h5 {
+                padding: 0 1em;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+
+            .ProjectSpecsBreak {
+                border-right: 1px dashed $dark-blue;
+            }
+        }
+
+        .ProjectTitle {
+            margin-bottom: 0.5em;
+        }
+
+        .ProjectMasonryLayout {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0.5rem;
+
+            @media #{$mq-medium} {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @media #{$mq-large} {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .ProjectWrap {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.ProjectModalImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    max-width: 800px;
+    max-height: 600px;
+
+    @media #{$mq-medium} {
+         width: 30em;
+    }
+}

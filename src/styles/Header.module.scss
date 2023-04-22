@@ -1,0 +1,101 @@
+.HeaderWrap {
+    height: 4em;
+    font-size: 3vw;
+    border-bottom: 2px dashed $dark-blue;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+
+    .HeaderLogo {
+        width: 4em;
+    }
+
+    .HeaderMenuCopy {
+        font-size: 1.8em;
+        font-weight: 700;
+        margin-left: auto;
+        cursor: pointer;
+        border: none;
+        font-family: $Syne;
+        padding: 0;
+        background: transparent;
+    }
+
+    .HeaderMenuOptionsWrap {
+        display: flex;
+        flex-flow: column;
+
+        .HeaderMenuItem {
+            div {
+                font-size: 4em;
+                display: inline-block;
+                border-bottom: 2px dashed $dark-blue;
+                padding: 1em 0 0 1.5em;
+                font-weight: 500;
+                cursor: pointer;
+                transition: 0.2s;
+
+                h2 {
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}
+
+@media #{$mq-medium} {
+    .HeaderWrap {
+        font-size: 2vw;
+        justify-content: space-between;
+
+        .HeaderMenuOptionsWrap {
+            flex-flow: row;
+            font-size: 0.4em;
+
+            .HeaderMenuItem {
+                div {
+                    padding: 0;
+                    margin: 0 0.5em;
+                    border-bottom: none;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transform: translateY(-0.25em);
+                        border-bottom: 2px solid $dark-blue;
+                    }
+                }
+
+                &:last-child {
+                    div {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        nav {
+            display: none;
+        }
+    }
+
+    @media #{$mq-large} {
+        .HeaderWrap {
+            font-size: 1.8vw; 
+        }
+    }
+
+    @media #{$mq-xlarge} {
+        .HeaderWrap {
+            font-size: 1.25em;
+
+            .HeaderMenuOptionsWrap {
+                .HeaderMenuItem {
+                    div {
+                      margin: 0 1em;
+                    }
+                }
+            }
+        }
+    }
+}

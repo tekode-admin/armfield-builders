@@ -1,0 +1,78 @@
+.ServicesSectionWrap {
+    padding: 2em 1em 4em;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .ServicesList {
+        margin: 1em 0;
+        li {
+            cursor: pointer;
+
+            &:last-child {
+                .ServicesArrordionHeading {
+                    border-bottom: none;
+                }
+            }
+
+            .ServiceItemCopy {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            .ServicesArrordionHeading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid $dark-blue;
+                padding: 1em 0;
+
+                &.active {
+                    border-bottom: none;
+
+                    .ServicesAccordionButton{
+                        &::before {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+
+            .ServicesAccordionButtonWrap {
+                position: relative;
+                width: 2.5em;
+                height: 2.22em;
+                border: 0;
+                outline: 0;
+                padding: 0;
+                z-index: 110;
+                transition: transform 100ms ease 0ms;
+
+                .ServicesAccordionButton {
+                    width: 2.25em;
+                    height: 0.2em;
+                    border: none;
+                    position: relative;
+                    top: 0.9em;
+                    left: 0.1em;
+                    background-color: $dark-blue;
+                    transition: top 250ms ease-in-out 0ms, transform 250ms ease-in-out 0ms;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 2.25em;
+                        height: 0.2em;
+                        transform: rotate(90deg);
+                        position: relative;
+                        background-color: $dark-blue;
+                        transition: top 250ms ease-in-out 0ms, transform 250ms ease-in-out 0ms;
+                    }
+
+                }
+            }
+        }
+    }
+}

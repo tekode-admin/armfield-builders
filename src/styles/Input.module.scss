@@ -1,0 +1,111 @@
+.ContactFormInputWrap {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    margin: 1.75em 0;
+  
+    label {
+      position: absolute;
+      top: 0.1em;
+      left: 0.5em;
+      font-size: 2em;
+      transition: 0.2s;
+      cursor: text;
+    }
+  
+    .LabelValue {
+      top: -1.25em;
+      left: initial;
+    }
+  }
+  
+  .InputContainer {
+    width: 100%;
+  }
+  
+  .InputEl {
+    border: none;
+    border-bottom: 0.1em dashed $dark-blue;
+    background: transparent;
+    height: 2em;
+    color: $dark-blue;
+    font-size: 1.5em;
+    padding-left: 0.5em;
+
+    &:focus-visible {
+        outline: none;
+        border: 0.1em dashed $dark-blue;
+    }
+  }
+  
+  .InputEl:focus + label {
+    top: -1.25em;
+    left: initial;
+  }
+  
+  .InputEl::placeholder {
+    font-size: 1.5em;
+    color: $dark-blue;
+    font-family: $Syne;
+  }
+  
+  .InputTextArea {
+    background: transparent;
+    padding: 0.5em 0 0 1em;
+    font-size: 1.5em;
+  
+    &::placeholder {
+      font-size: 1.25em;
+    }
+  }
+  
+  .Invalid {
+    border: 1px solid red;
+  }
+  
+  .Option {
+    width: 33%;
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 3em;
+    margin: 0;
+    border-right: 1px dashed $dark-blue;
+
+    &:last-child {
+        border-right: none;
+    }
+  
+    :focus + label {
+      top: initial;
+    }
+  }
+  
+  .Option > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  
+    &:checked + label {
+      background: transparent;
+      color: $dark-blue;
+      border: 2px dashed $dark-blue;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      top: 0;
+    }
+  }
+  
+  .Option label {
+    position: relative;
+    left: initial;
+    top: initial;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  

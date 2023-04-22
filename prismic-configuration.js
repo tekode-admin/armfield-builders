@@ -1,3 +1,3 @@
 {
-  "apiEndpoint": "https://armfield-builders.prismic.io/api/v2"
+  "apiEndpoint": "https://armfieldbuilders.prismic.io/api/v2"
 }

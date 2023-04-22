@@ -1,0 +1,47 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "UID"
+      }
+    },
+    "hero_copy" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,image",
+        "label" : "Hero Copy"
+      }
+    },
+    "hero_images" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "hero_image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "Hero Image"
+            }
+          },
+          "hero_image_caption" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+              "label" : "Hero Image Caption"
+            }
+          }
+        },
+        "label" : "Hero Images"
+      }
+    },
+    "hero_business_name" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label" : "Hero Business Name"
+      }
+    }
+  }
+}

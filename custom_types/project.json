@@ -1,0 +1,78 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "project_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Project Title"
+      }
+    },
+    "project_copy": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Project Copy"
+      }
+    },
+    "project_location": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Project Location"
+      }
+    },
+    "project_type": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Project Type"
+      }
+    },
+    "project_thumbnail": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Project Thumbnail"
+      }
+    },
+    "hero_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Hero Image"
+      }
+    },
+    "project_images": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "project_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Project Image"
+            }
+          }
+        },
+        "label": "Project Images"
+      }
+    },
+    "show": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "Show"
+      }
+    }
+  }
+}

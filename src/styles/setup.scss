@@ -1,0 +1,153 @@
+/*******************
+   ** Media Queries **
+   *******************/
+
+$mq-screen: "screen";
+$mq-small: "screen and (min-width: 375px)"; // mobile
+$mq-medium: "screen and (min-width: 768px)"; //tablet
+$mq-large: "screen and (min-width: 1024px)"; // large tablet
+$mq-xlarge: "screen and (min-width: 1440px)"; //desktop
+$mq-largest: "screen and (min-width: 1920px)"; // large desktop
+
+// Variables
+$white: #fff;
+$black: #000;
+$light-blue: #e7ecf0;
+$dark-blue: #3b4166;
+$Iceland: "Iceland", sans-serif;
+$Syne: "Syne", sans-serif;
+
+body {
+  font-size: 16px;
+  color: $dark-blue;
+  background-color: $light-blue;
+  font-family: $Syne;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  font-size: 3vw;
+
+  @media #{$mq-medium} {
+    font-size: 2vw;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.8vw;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 1em;
+  }
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 600;
+
+  @media #{$mq-medium} {
+    font-size: 3.2em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 3.5em;
+  }
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: 600;
+
+  @media #{$mq-medium} {
+    font-size: 1.8em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.7em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 2.5em;
+  }
+}
+
+h4 {
+  font-size: 1.5em;
+  font-weight: 500;
+
+  @media #{$mq-medium} {
+    font-size: 5.3em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 4.5em;
+  }
+}
+
+h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+
+  @media #{$mq-medium} {
+    font-size: 1.25em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 1.5em;
+  }
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: 600;
+
+  @media #{$mq-medium} {
+    font-size: 5.3em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 4.5em;
+  }
+}
+
+p {
+  font-size: 1.42em;
+  padding: 1em 0;
+  line-height: 1.2em;
+
+  @media #{$mq-medium} {
+    font-size: 1.5em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.4em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 1.6em;
+  }
+}

@@ -13,3 +13,10 @@ export const setOpenModal = (openModal) => {
         openModal: openModal
     }
 }
+
+export const setScreenSize = () => {
+    return {
+        type: actionTypes.SET_SCREEN_SIZE,
+        isMobile: window.innerWidth < 768,
+    }
+}

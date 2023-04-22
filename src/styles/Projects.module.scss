@@ -1,0 +1,61 @@
+.ProjectsWrap {
+    .ProjectsTitle {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 0.4em 0.5em 0;
+
+        @media #{$mq-xlarge} {
+            margin-right: 2em;
+        }
+    }
+
+    .SwiperSlide {
+        // border-right: 1px dashed $dark-blue;
+        position: relative;
+
+        .SwiperContent {
+            height: 23.75em;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            color: $dark-blue;
+
+            @media #{$mq-medium} {
+                height: 36em;
+            }
+
+            @media #{$mq-xlarge} {
+                height: 40em;
+            }
+
+            .ProjectThumbnail {
+                height: 90%;
+                width: 100%;
+                object-fit: cover;
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                transition: 0.5s;
+                border-radius: 5px;
+
+                &:hover {
+                    filter: grayscale(0);
+                    -webkit-filter: grayscale(0);
+                }
+            }
+
+            .ProjectLocation {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .ProjectCaption {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
