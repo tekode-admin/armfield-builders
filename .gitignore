@@ -18,3 +18,6 @@ public
 # Project files
 .vscode/
 .env*
+
+# Local Netlify folder
+.netlify
