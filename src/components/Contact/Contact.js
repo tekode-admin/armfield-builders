@@ -2,6 +2,7 @@ import { PrismicRichText } from '@prismicio/react';
 import React, { useState } from 'react';
 import Input from './Input';
 import * as styles from '../../styles/Contact.module.scss';
+import axios from 'axios';
 
 const Contact = ({ data }) => {
     const contactData = data.data;
@@ -11,8 +12,7 @@ const Contact = ({ data }) => {
             return {
                 id: service.service_title.text,
                 value: service.service_title.text,
-                valid: false,
-                touched: false
+                checked: false
             };
         })
     }
@@ -95,10 +95,23 @@ const Contact = ({ data }) => {
             ...form,
         };
         const updatedEl = { ...updatedContactForm[inputIdentifier] };
-        updatedEl.value = event.target.value;
-        updatedEl.valid = checkValidity(updatedEl.value, updatedEl.validation);
-        updatedEl.touched = true;
+        if(inputIdentifier === 'services') {
+            let checkedServices = new Array();
+            updatedEl.options.map(service => {
+              if(service.id === event.target.value) {
+                service.checked = event.target.checked;
+              }
 
+              if(service.checked) {
+                checkedServices.push(service.value);
+              }
+            });
+            updatedEl.value = checkedServices.toString();
+        } else {
+            updatedEl.value = event.target.value;
+            updatedEl.valid = checkValidity(updatedEl.value, updatedEl.validation);
+            updatedEl.touched = true;
+        }
         updatedContactForm[inputIdentifier] = updatedEl;
         let validForm = true;
         for(let inputId in updatedContactForm){
@@ -107,7 +120,7 @@ const Contact = ({ data }) => {
         if(!validForm) {
             setFormSubmitted(false);
         }
-       
+
         setForm(updatedContactForm);
         setFormValid(validForm);
     };
@@ -136,13 +149,13 @@ const Contact = ({ data }) => {
     }
 
     const handleSuccess = () => {
-        this.setState({sendButtonCopy: "We will be in touch soon!"});
-        this.setState({formSubmitted: true});
+        // this.setState({sendButtonCopy: "We will be in touch soon!"});
+        // this.setState({formSubmitted: true});
      }
  
      const handlerError = () => {
-         this.setState({sendButtonCopy: "Sorry, we seem to have an issue."});
-         this.setState({formSubmitted: true});
+        //  this.setState({sendButtonCopy: "Sorry, we seem to have an issue."});
+        //  this.setState({formSubmitted: true});
      }
 
      const submitHandler = (e) => {
@@ -154,6 +167,15 @@ const Contact = ({ data }) => {
             services: form.services.value,
             message: form.message.value
         }
+
+        axios.post('/.netlify/functions/sendEmail', JSON.stringify(data)).then(response => {
+            console.log(response);
+            if(response.status !== 200){
+                handlerError();
+            } else {
+                handleSuccess();
+            }
+        })
      }
 
     let formElements = formElementsArray.map((formEl, index) => {
@@ -195,7 +217,7 @@ const Contact = ({ data }) => {
             <div className={styles.SectionBreak}></div>
             <div className={styles.ContactContentWrap}>
                 {contactData.contact_title ? <PrismicRichText field={contactData.contact_title.richText} /> : ''}
-                <form className={styles.ContactFormWrap}>
+                <form className={styles.ContactFormWrap} name='contact' onSubmit={submitHandler}>
                     {formElements}
                     <button type='submit' className={[styles.ContactSubmitButton, !formValid ? styles.Disabled : ''].join(' ')} disabled={!formValid}>Send</button>
                 </form>

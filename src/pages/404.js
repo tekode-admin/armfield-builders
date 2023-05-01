@@ -2,14 +2,15 @@ import * as React from 'react'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 
+import * as styles from '../styles/404.module.scss';
+
 const NotFoundPage = () => (
   <Layout>
     <Seo title="Not found" />
-    <div className="container">
-      <h1>Oh no!</h1>
-      <h3>We can't seem to find the page you're looking for.</h3>
-      <br />
-    </div>
+   <section className={styles.fourOhFourSection}>
+    <h1>404</h1>
+    <h2>Oops! Sorry, this page has not been constructed yet!</h2>
+   </section>
   </Layout>
 )
 
