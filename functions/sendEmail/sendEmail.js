@@ -3,7 +3,7 @@
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-exports.handler =  async (event, context, callback) => {
+exports.handler =  async (event) => {
   let data = JSON.parse(event.body);
   let messageBody = `
   <h2>Someone is needing Armfield Builders's assistance</h2>
@@ -18,8 +18,8 @@ exports.handler =  async (event, context, callback) => {
   `;
   const mail_to_send = {
     to: process.env.EMAIL_ADDRESS,
-    from: `${data.name} <${data.email}>`,
-    subject: "New contact from submission from ArmfieldBuilders.com!",
+    from: process.env.FROM_EMAIL_ADDRESS,
+    subject: "New contact form submission from ArmfieldBuilders.com!",
     html: messageBody,
   };
 
@@ -28,7 +28,7 @@ exports.handler =  async (event, context, callback) => {
 
     return {
       statusCode: 200,
-      body: "Message sent successfully"
+      body: JSON.stringify({ message: "Success"})
     }
   } catch(e){
     return {

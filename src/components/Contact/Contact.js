@@ -89,22 +89,23 @@ const Contact = ({ data }) => {
     const [form, setForm] = useState(contactForm);
     const [formValid, setFormValid] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const[sendButtonCopy, setSendButtonCopy] = useState("Send");
 
     const inputChangedHandler = (event, inputIdentifier) => {
         const updatedContactForm = {
             ...form,
         };
         const updatedEl = { ...updatedContactForm[inputIdentifier] };
-        if(inputIdentifier === 'services') {
+        if (inputIdentifier === 'services') {
             let checkedServices = new Array();
             updatedEl.options.map(service => {
-              if(service.id === event.target.value) {
-                service.checked = event.target.checked;
-              }
+                if (service.id === event.target.value) {
+                    service.checked = event.target.checked;
+                }
 
-              if(service.checked) {
-                checkedServices.push(service.value);
-              }
+                if (service.checked) {
+                    checkedServices.push(service.value);
+                }
             });
             updatedEl.value = checkedServices.toString();
         } else {
@@ -114,10 +115,10 @@ const Contact = ({ data }) => {
         }
         updatedContactForm[inputIdentifier] = updatedEl;
         let validForm = true;
-        for(let inputId in updatedContactForm){
+        for (let inputId in updatedContactForm) {
             validForm = updatedContactForm[inputId].valid && validForm;
         }
-        if(!validForm) {
+        if (!validForm) {
             setFormSubmitted(false);
         }
 
@@ -149,16 +150,16 @@ const Contact = ({ data }) => {
     }
 
     const handleSuccess = () => {
-        // this.setState({sendButtonCopy: "We will be in touch soon!"});
-        // this.setState({formSubmitted: true});
-     }
- 
-     const handlerError = () => {
-        //  this.setState({sendButtonCopy: "Sorry, we seem to have an issue."});
-        //  this.setState({formSubmitted: true});
-     }
+        setSendButtonCopy("We will be in touch soon!");
+        setFormSubmitted(true);
+    }
 
-     const submitHandler = (e) => {
+    const handlerError = () => {
+        setSendButtonCopy("Sorry, we seem to have an issue.");
+        setFormSubmitted(true);
+    }
+
+    const submitHandler = (e) => {
         e.preventDefault();
         let data = {
             name: form.name.value,
@@ -169,14 +170,13 @@ const Contact = ({ data }) => {
         }
 
         axios.post('/.netlify/functions/sendEmail', JSON.stringify(data)).then(response => {
-            console.log(response);
-            if(response.status !== 200){
+            if (response.status !== 200) {
                 handlerError();
             } else {
                 handleSuccess();
             }
         })
-     }
+    }
 
     let formElements = formElementsArray.map((formEl, index) => {
         if (formEl.config.options) {
@@ -189,8 +189,8 @@ const Contact = ({ data }) => {
                         touched={option.touched}
                         changed={(event) => inputChangedHandler(event, formEl.id)}
                         id={option.id}
-                        option={true} 
-                        key={optionIndex}/>
+                        option={true}
+                        key={optionIndex} />
 
                 )
             });
@@ -205,8 +205,8 @@ const Contact = ({ data }) => {
                     invalid={!formEl.config.valid}
                     shouldValidate={formEl.config.validation}
                     touched={formEl.config.touched}
-                    changed={(event) => inputChangedHandler(event, formEl.id)} 
-                    key={index}/>
+                    changed={(event) => inputChangedHandler(event, formEl.id)}
+                    key={index} />
             );
         }
 
@@ -219,7 +219,7 @@ const Contact = ({ data }) => {
                 {contactData.contact_title ? <PrismicRichText field={contactData.contact_title.richText} /> : ''}
                 <form className={styles.ContactFormWrap} name='contact' onSubmit={submitHandler}>
                     {formElements}
-                    <button type='submit' className={[styles.ContactSubmitButton, !formValid ? styles.Disabled : ''].join(' ')} disabled={!formValid}>Send</button>
+                    <button type='submit' className={[styles.ContactSubmitButton, !formValid || formSubmitted ? styles.Disabled : ''].join(' ')} disabled={!formValid || formSubmitted}>{sendButtonCopy}</button>
                 </form>
             </div>
         </section>
