@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import * as styles from '../styles/Projects.module.scss';
 import { Link } from 'gatsby';
+import { Autoplay } from 'swiper';
 
 const Projects = ({ data }) => {
     const projectsData = data.data;
@@ -34,8 +35,11 @@ const Projects = ({ data }) => {
                 slidesPerView={1.75}
                 className={styles.SwiperWrap}
                 spaceBetween={20}
-                slidesOffsetBefore={isMobile ? 10 : 30}
+                slidesOffsetBefore={isMobile ? 20 : 10}
                 slidesOffsetAfter={isMobile ? 10 : 30}
+                loop={true}
+                autoplay={{delay: 5000, disableOnInteraction: false}}
+                modules={[Autoplay]}
             >
                 {projects}
             </Swiper>
