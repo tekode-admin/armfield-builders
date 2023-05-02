@@ -94,7 +94,8 @@
         display: flex;
         flex-flow: column;
         justify-content: center;
-        padding-left: 2.75em;
+        padding-left: 1em;
+        padding-right: 1.2em;
         font-size: 1em;
 
         @media #{$mq-xlarge} { 

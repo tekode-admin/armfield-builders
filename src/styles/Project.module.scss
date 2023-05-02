@@ -47,20 +47,31 @@
         }
 
         .ProjectMasonryLayout {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 0.5rem;
+           column-count: 1;
+           column-gap: 5px;
 
             @media #{$mq-medium} {
-                grid-template-columns: repeat(4, 1fr);
+                column-count: 3;
             }
 
             @media #{$mq-large} {
-                grid-template-columns: repeat(5, 1fr);
+                column-count: 4;
             }
 
             .ProjectWrap {
                 cursor: pointer;
+                margin: 0;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                margin-bottom: 5px;
+                break-inside: avoid;
+
+                .ProjectMasonryImage {
+                    max-width: 100%;
+                    grid-row: 1/ -1;
+                    grid-column: 1;
+                    display: block;
+                }
             }
         }
     }
