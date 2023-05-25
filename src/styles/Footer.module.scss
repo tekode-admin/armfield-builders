@@ -1,8 +1,12 @@
 .FooterSection {
-    padding: 0 0.4em 1em 1em;
+    padding: 0 0.4em 2em 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media #{$mq-medium} {
+        padding: 0 0.4em 1em 1em;
+    }
 
     .FooterCopyrightWrap {
         display: flex;

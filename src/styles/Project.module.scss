@@ -1,5 +1,4 @@
 .ProjectSection {
-    
     .ProjectHero {
         height: 10em;
 
@@ -47,8 +46,8 @@
         }
 
         .ProjectMasonryLayout {
-           column-count: 1;
-           column-gap: 5px;
+            column-count: 1;
+            column-gap: 5px;
 
             @media #{$mq-medium} {
                 column-count: 3;
@@ -79,14 +78,15 @@
 
 .ProjectModalImage {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 10%;
     width: 30em;
     max-width: 800px;
     max-height: 600px;
 
     @media #{$mq-medium} {
-         width: 30em;
+        width: 30em;
     }
 }
