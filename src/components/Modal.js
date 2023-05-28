@@ -10,7 +10,7 @@ import { setOpenModal } from '../redux/actions/actions';
 const Modal = (props) => {
     const openModal = useSelector(state => state.openModal);
 
-    openModal ? document.body.classList.add(styles.BodyFreeze) : document.body.classList.remove(styles.BodyFreeze);
+    // openModal ? document.body.classList.add(styles.BodyFreeze) : document.body.classList.remove(styles.BodyFreeze);
 
     const closeMenu = () => {
         reduxStore.dispatch(setOpenModal(false));
