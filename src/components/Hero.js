@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import BackgroundImage from 'gatsby-background-image';
 import * as styles from '../styles/Hero.module.scss';
 import { Autoplay } from 'swiper';
 

@@ -6,13 +6,14 @@ import { PrismicProvider } from '@prismicio/react'
 
 
 const ReduxWrapper = ({ element }) => (
-    <PrismicProvider
-        internalLinkComponent={({ href, ...props }) => (
-            <Link to={href} {...props} />
-        )}
-    >
-        <Provider store={store}>{element}</Provider>
-    </PrismicProvider>
+    {element}
+    // <PrismicProvider
+    //     internalLinkComponent={({ href, ...props }) => (
+    //         <Link to={href} {...props} />
+    //     )}
+    // >
+    //     <Provider store={store}>{element}</Provider>
+    // </PrismicProvider>
 );
 
 export default ReduxWrapper; 

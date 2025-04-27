@@ -33,7 +33,7 @@ const Projects = ({ data }) => {
             {projectsData.projects_title ? <h2 className={styles.ProjectsTitle}>{projectsData.projects_title.text}</h2> : ''}
             <Swiper
                 slidesPerView={1.75}
-                className={styles.SwiperWrap}
+                // className={styles.SwiperWrap}
                 spaceBetween={20}
                 slidesOffsetBefore={isMobile ? 20 : 10}
                 slidesOffsetAfter={isMobile ? 10 : 30}

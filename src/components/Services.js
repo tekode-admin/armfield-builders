@@ -17,7 +17,7 @@ const Services = ({data}) => {
             return (
             <li key={index} onClick={() => serviceHandler(index)} onKeyDown={() => serviceHandler(index)} tabIndex={"0"}>
                 <div className={[styles.ServicesArrordionHeading, selectedServiceIndex === index ? styles.active : ''].join(' ')}>
-                    <h3 className={styles.ServiceItemTitle}>{service.service_title.text}</h3>
+                    <h3>{service.service_title.text}</h3>
                     <div className={styles.ServicesAccordionButtonWrap}><div className={styles.ServicesAccordionButton}></div></div>
                 </div>
                 <div className={[styles.ServiceItemCopy, selectedServiceIndex === index ? styles.active : ''].join(' ')} id={'service-' + index}><PrismicRichText field={service.service_description.richText}/></div>
