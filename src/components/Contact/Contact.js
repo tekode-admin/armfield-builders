@@ -159,24 +159,24 @@ const Contact = ({ data }) => {
         setFormSubmitted(true);
     }
 
-    // const submitHandler = (e) => {
-    //     e.preventDefault();
-    //     let data = {
-    //         name: form.name.value,
-    //         email: form.email.value,
-    //         phone: form.phone.value,
-    //         services: form.services.value,
-    //         message: form.message.value
-    //     }
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let data = {
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            services: form.services.value,
+            message: form.message.value
+        }
 
-    //     axios.post('/.netlify/functions/sendEmail', JSON.stringify(data)).then(response => {
-    //         if (response.status !== 200) {
-    //             handlerError();
-    //         } else {
-    //             handleSuccess();
-    //         }
-    //     })
-    // }
+        axios.post('/.netlify/functions/sendEmail', JSON.stringify(data)).then(response => {
+            if (response.status !== 200) {
+                handlerError();
+            } else {
+                handleSuccess();
+            }
+        })
+    }
 
     let formElements = formElementsArray.map((formEl, index) => {
         if (formEl.config.options) {
@@ -217,7 +217,7 @@ const Contact = ({ data }) => {
             <div className={styles.SectionBreak}></div>
             <div className={styles.ContactContentWrap}>
                 {contactData.contact_title ? <PrismicRichText field={contactData.contact_title.richText} /> : ''}
-                <form className={styles.ContactFormWrap} name='contact' data-netlify="true" action="/">
+                <form className={styles.ContactFormWrap} name='contact' onSubmit={submitHandler}>
                     {formElements}
                     <button type='submit' className={[styles.ContactSubmitButton, !formValid || formSubmitted ? styles.Disabled : ''].join(' ')} disabled={!formValid || formSubmitted}>{sendButtonCopy}</button>
                 </form>
